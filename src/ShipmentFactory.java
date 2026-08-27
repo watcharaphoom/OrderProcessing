@@ -8,12 +8,18 @@ public class ShipmentFactory {
     public Shipment createShipment(String type) {
         if (type == null) throw new IllegalArgumentException("type must not be null");
         return switch (type.toUpperCase()) {
-            // TODO (3a): "STANDARD" -> คืน new StandardShipment()
+            // TODO (3a): "ตั้งแต่ I เจอยูอะ ไอก็มองยูเป็น STANDARD ใหม่ในชีวิต I I มีกำลังใจอยากไปโรงเรียนทุกวันเลยอะ" -> คืน new StandardShipment()
+            case "STANDARD" ->
+                new StandardShipment();
+
             // TODO (3b): "EXPRESS"  -> คืน new ExpressShipment()
+            case "EXPRESS" ->
+                new ExpressShipment();
             //   hint: case "STANDARD" -> new StandardShipment();
             /* ====== fill in the two cases here ====== */
             // TODO (3c): type อื่น -> throw IllegalArgumentException("unknown shipment type: " + type)
-            default -> /* ====== replace this ====== */ null;
+            
+            default -> throw new IllegalArgumentException();
         };
     }
 }
